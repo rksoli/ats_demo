@@ -1,0 +1,7 @@
+.venv/
+src/cv_extractor.egg-info/
+.idea/
+__pycache__/
+.pytest_cache/
+config/openai.json
+output/

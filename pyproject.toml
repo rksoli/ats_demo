@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cv-extractor"
+version = "0.1.0"
+description = "MVP CLI tool for CV to structured JSON extraction."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "openai>=1.30.0",
+  "python-docx>=1.1.0",
+  "pydantic>=2.7.0",
+  "jsonschema>=4.22.0",
+  "pypdf>=4.2.0",
+  "typer>=0.12.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0"
+]
+ui = [
+  "PyQt6>=6.6"
+]
+
+[project.scripts]
+cv-extractor = "cv_extractor.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
